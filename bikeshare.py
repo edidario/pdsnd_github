@@ -149,7 +149,7 @@ def data_display(df):
 
 def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
-    time.sleep(2) #https://stackoverflow.com/questions/11552320/correct-way-to-pause-a-python-program
+    time.sleep(1) #https://stackoverflow.com/questions/11552320/correct-way-to-pause-a-python-program
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
@@ -190,7 +190,7 @@ def time_stats(df):
 
 def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
-    time.sleep(2) #https://stackoverflow.com/questions/11552320/correct-way-to-pause-a-python-program
+    time.sleep(1) #https://stackoverflow.com/questions/11552320/correct-way-to-pause-a-python-program
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
@@ -223,7 +223,7 @@ def station_stats(df):
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration.
     I don't have the time unit displayed as it's not in the data. It would only be an assumption."""
-    time.sleep(2) #https://stackoverflow.com/questions/11552320/correct-way-to-pause-a-python-program
+    time.sleep(1) #https://stackoverflow.com/questions/11552320/correct-way-to-pause-a-python-program
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
@@ -244,7 +244,7 @@ def trip_duration_stats(df):
 
 def user_stats(df):
     """Displays statistics on bikeshare users."""
-    time.sleep(2) #https://stackoverflow.com/questions/11552320/correct-way-to-pause-a-python-program
+    time.sleep(1) #https://stackoverflow.com/questions/11552320/correct-way-to-pause-a-python-program
 
     print('\nCalculating User Stats...\n')
     start_time = time.time()
