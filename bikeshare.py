@@ -26,7 +26,7 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     # https://stackoverflow.com/questions/23294658/asking-the-user-for-input-until-they-give-a-valid-response
     city = ''
     while True:
@@ -40,7 +40,7 @@ def get_filters():
             break
 
 
-    # TO DO: get user input for month (all, january, february, ... , june)
+    # get user input for month (all, january, february, ... , june)
     month = ''
     while True:
         months = ('all', 'january', 'february', 'march', 'april', 'may', 'june')
@@ -52,7 +52,7 @@ def get_filters():
             print("We will explore data for", month.capitalize())
             break
 
-    # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
+    # get user input for day of week (all, monday, tuesday, ... sunday)
     day = ''
     while True:
         days = ('all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday')
@@ -153,7 +153,7 @@ def time_stats(df):
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
-    # TO DO: display the most common month
+    # display the most common month
     # convert the Start Time column to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
 
@@ -165,7 +165,7 @@ def time_stats(df):
 
     print('Most Popular Start Month:', popular_month)
 
-    # TO DO: display the most common day of week https://pandas.pydata.org/docs/reference/api/pandas.Series.dt.weekday.html, https://stackoverflow.com/questions/60339049/weekday-name-from-a-pandas-dataframe-date-object
+    # display the most common day of week https://pandas.pydata.org/docs/reference/api/pandas.Series.dt.weekday.html, https://stackoverflow.com/questions/60339049/weekday-name-from-a-pandas-dataframe-date-object
     # extract day from the Start Time column to create a day column
     df['day'] = df['Start Time'].dt.weekday_name
 
@@ -175,7 +175,7 @@ def time_stats(df):
 
     print('Most Popular Start Day:', popular_day)
 
-    # TO DO: display the most common start hour
+    # display the most common start hour
     # extract hour from the Start Time column to create an hour column
     df['hour'] = df['Start Time'].dt.hour
 
@@ -194,7 +194,7 @@ def station_stats(df):
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
-    # TO DO: display most commonly used start station
+    # display most commonly used start station
     #print('Most common start station:', df['Start Station'].mode()) #https://datascienceparichay.com/article/most-frequent-value-in-a-pandas-column/
     '''I was going to use mode, as I understand max only returns a signle value, but i couldn't extract just the name'''
 
@@ -204,13 +204,13 @@ def station_stats(df):
     print(df['Start Station'].value_counts().max(), 'trips')
     print()
 
-    # TO DO: display most commonly used end station
+    # display most commonly used end station
     print('Most common end station:')
     print(df['End Station'].value_counts().idxmax())
     print(df['End Station'].value_counts().max(), 'trips')
     print()
 
-    # TO DO: display most frequent combination of start station and end station trip
+    # display most frequent combination of start station and end station trip
     print('Most common trip:')
     print(df.groupby(['Start Station', 'End Station']).size().idxmax())
     print(df.groupby(['Start Station', 'End Station']).size().max(), 'trips')
@@ -227,12 +227,12 @@ def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
-    # TO DO: display total travel time
+    # display total travel time
     print('Total trip time:')
     print(df['Trip Duration'].sum())
     print()
 
-    # TO DO: display mean travel time
+    # display mean travel time
     print('Mean travel time:')
     round_mean = df['Trip Duration'].mean()
     rounded_mean = round(round_mean)
@@ -249,12 +249,12 @@ def user_stats(df):
     print('\nCalculating User Stats...\n')
     start_time = time.time()
 
-    # TO DO: Display counts of user types
+    # Display counts of user types
     print('Count of user types:')
     print(df['User Type'].value_counts())
     print()
 
-    # TO DO: Display counts of gender
+    # Display counts of gender
     if 'Gender' in df:
         print('Count of gender:')
         print(df['Gender'].value_counts())
@@ -262,7 +262,7 @@ def user_stats(df):
     else:
         print('There is no gender information available.')
 
-    # TO DO: Display earliest, most recent, and most common year of birth
+    # Display earliest, most recent, and most common year of birth
     # using groupby() function on Group column  https://www.geeksforgeeks.org/max-and-min-date-in-pandas-groupby/
     #print(df.agg(Minimum_Date=('Birth Year', np.min), Maximum_Date=('Birth Year', np.max)))
     if 'Birth Year' in df:
