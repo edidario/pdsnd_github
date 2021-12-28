@@ -26,8 +26,8 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-    # https://stackoverflow.com/questions/23294658/asking-the-user-for-input-until-they-give-a-valid-response
+    #Get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    #https://stackoverflow.com/questions/23294658/asking-the-user-for-input-until-they-give-a-valid-response
     city = ''
     while True:
         print ("You can choose to explore data for:", cities)
@@ -40,7 +40,7 @@ def get_filters():
             break
 
 
-    # get user input for month (all, january, february, ... , june)
+    #Get user input for month (all, january, february, ... , june)
     month = ''
     while True:
         months = ('all', 'january', 'february', 'march', 'april', 'may', 'june')
@@ -52,7 +52,7 @@ def get_filters():
             print("We will explore data for", month.capitalize())
             break
 
-    # get user input for day of week (all, monday, tuesday, ... sunday)
+    #Get user input for day of week (all, monday, tuesday, ... sunday)
     day = ''
     while True:
         days = ('all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday')
@@ -79,7 +79,7 @@ def load_data(city, month, day):
     """
     print("You are viewing first data for:", city, month, day)
 
- # load data file into a dataframe
+    #load data file into a dataframe
     df = pd.read_csv(CITY_DATA[city])
 
     # convert the Start Time column to datetime
@@ -171,7 +171,7 @@ def time_stats(df):
 
     # find the most popular hour
     popular_day = df['day'].mode()[0]
- #   dayname = popular_day.strftime("%A")
+    #dayname = popular_day.strftime("%A")
 
     print('Most Popular Start Day:', popular_day)
 
@@ -195,8 +195,6 @@ def station_stats(df):
     start_time = time.time()
 
     # display most commonly used start station
-    #print('Most common start station:', df['Start Station'].mode()) #https://datascienceparichay.com/article/most-frequent-value-in-a-pandas-column/
-    '''I was going to use mode, as I understand max only returns a signle value, but i couldn't extract just the name'''
 
     #https://stackoverflow.com/questions/15138973/how-to-get-the-number-of-the-most-frequent-value-in-a-column
     print('Most common start station:')
@@ -264,7 +262,6 @@ def user_stats(df):
 
     # Display earliest, most recent, and most common year of birth
     # using groupby() function on Group column  https://www.geeksforgeeks.org/max-and-min-date-in-pandas-groupby/
-    #print(df.agg(Minimum_Date=('Birth Year', np.min), Maximum_Date=('Birth Year', np.max)))
     if 'Birth Year' in df:
         print('Minimum Birth Year:')
         min_birth_year = int(df['Birth Year'].min())
@@ -309,7 +306,7 @@ def main():
                     print('Restarting...')
                     break
                 else:
-                    #if no, exit program
+                #if no, exit program
                     print('Exiting...')
                     exit()
 
