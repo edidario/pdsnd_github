@@ -6,7 +6,7 @@ Project readme updated 12/27/2021.
 edidario/pdsnd_github
 
 ### Description
-Project to complete requirements for Udacity "Prost Your Work on GitHub"
+Project to complete requirements for Udacity "Post Your Work on GitHub"
 
 ### Files used
 Fork of manual.yml
@@ -30,3 +30,6 @@ function prompts the user if they want to see 5 lines of raw data, displays the
 data if answer is 'yes', iterates the prompts and displays another 5 lines if
 the user chooses. The program stops at the end of the file or if the user
 responds 'no'.
+
+#Submission snapshot
+Submitted on: Mon, Dec 27 8:16 pm
